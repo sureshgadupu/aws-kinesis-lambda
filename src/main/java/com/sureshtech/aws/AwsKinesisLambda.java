@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.events.KinesisEvent;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Lambda function entry point. You can change to use other pojo type or implement
@@ -34,7 +35,8 @@ public class AwsKinesisLambda  {
 	}
 
 	public AwsKinesisLambda() {
-    	
+		this.empEventProcessor = new EmployeeEventProcessor();
+		objectMapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
     }
 
 //    @Override

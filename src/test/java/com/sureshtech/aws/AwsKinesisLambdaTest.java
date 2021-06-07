@@ -47,7 +47,7 @@ public class AwsKinesisLambdaTest {
     	
     	lambda.setEmpEventProcessor(employeeEventProcessor);
 
-    	Mockito.when(employeeEventProcessor.processEmployeeEvents(ArgumentMatchers.anyList())).thenReturn(5);
+    	Mockito.when(employeeEventProcessor.processEmployeeEvents(ArgumentMatchers.anyList())).thenReturn(4);
     	
         lambda.handleRequest(createKinesisEvent(false), testContext);
 

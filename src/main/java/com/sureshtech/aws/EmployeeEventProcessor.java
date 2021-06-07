@@ -12,8 +12,8 @@ public class EmployeeEventProcessor {
 	public int processEmployeeEvents(List<EmployeeEvent> empEvents) {
 		
 		 for (EmployeeEvent employeeEvent : empEvents) {
-	    	   logger.info("Emp event -> Id :  "+ employeeEvent.getId() +" , Name :"+  employeeEvent.getName());
-	       }
+	    	   logger.info("Emp event -> Id :  "+ employeeEvent.getId() +" , Name :"+  employeeEvent.getName() +" , Address : "+employeeEvent.getAddress() +" , Salary :"+ employeeEvent.getSalary());
+	     }
 		 return empEvents.size();
 		
 	}
